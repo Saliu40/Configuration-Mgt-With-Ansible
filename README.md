@@ -45,3 +45,21 @@ get the public ip address of Ur two server/worker node, use them to define Ur in
 if all the stages listed above are well configured, You should be able to do Ansible ping to show successfull configurations
 <img width="712" height="493" alt="Screenshot 2025-02-19 114440" src="https://github.com/user-attachments/assets/bb9a8e81-ad34-4c90-8c76-297eafe591fa" />
 i ping both of my server nodes names Tomcat_server, and maven_server
+
+Stage5. Creating Ansible Configuration File on our master VM
+The Ansible Configuration File (usually named ansible.cfg) is used to define how Ansible behaves — it controls Ansible’s default settings, such as:
+Where our inventory file is located
+Whether SSH should ask for passwords
+Default remote user
+Logging behavior
+Roles and playbook paths
+Privilege escalation settings (sudo)
+And many other operational defaults
+<img width="780" height="186" alt="Screenshot 2025-02-19 120543" src="https://github.com/user-attachments/assets/9b8838c5-734a-499b-a64e-39b2b477fff3" />
+
+<img width="701" height="371" alt="Screenshot 2025-02-19 120531" src="https://github.com/user-attachments/assets/ba758a0c-00ad-4ea1-b803-0c11e434aa27" />
+touch a file (vi or nano ansible.cfg), define or paste the above codes and save it
+after saving the file, run the below commands to enable ansible recorgnises it as the default .cfg file
+ A screenshot of a computer
+ <img width="791" height="343" alt="Screenshot 2025-02-19 120749" src="https://github.com/user-attachments/assets/94d9c5b1-15d7-459f-8732-cbdf79e8d1b1" />
+
