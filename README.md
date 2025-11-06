@@ -24,3 +24,24 @@ Ansible is agentless, meaning it does not install any software or daemon on the 
 <img width="650" height="493" alt="Screenshot 2025-02-19 110636" src="https://github.com/user-attachments/assets/e333cece-10c2-41ad-8970-dc95ae21aabf" />
 Generate ssh keys on the master node(ssh-keygen)
 the above command will generate ssh key pairs, one as private key, and the other as publick keys.
+
+ <img width="1136" height="561" alt="Screenshot 2025-02-19 113048" src="https://github.com/user-attachments/assets/3b3ed34f-74d5-40f0-be02-32c69a7780f8" />
+Copy the ssh Public key to Authorized_keys files of the 2slave/worker nodes, so as to enable ssh-connection(hand-shake)
+You can choose to do it manually if you have access to the worker node, or You can Automate it.
+after successfull copy, try ssh connection from the master node, to the slave node using the slave node public ip to be sure ure successfully connectected.
+
+Stage4. Creating Ansible Inventory File
+The inventory file is where we list the servers (hosts) that Ansible will manage.
+Ansible needs to know the following:
+Which machines to connect to
+Their IP addresses or hostnames
+Optional: the SSH username & key to use
+Optional: groups (e.g., webservers, dbservers)
+Think of it like the address book for your servers.
+<img width="575" height="368" alt="Screenshot 2025-02-19 114312" src="https://github.com/user-attachments/assets/a6ace7ac-9720-4763-9d22-1e641a44d66d" />
+get the public ip address of Ur two server/worker node, use them to define Ur inventory file on the master node/server
+<img width="1186" height="705" alt="Screenshot 2025-02-19 113429" src="https://github.com/user-attachments/assets/722a5bec-62ce-435f-a4d2-fa618f1b188e" />
+
+if all the stages listed above are well configured, You should be able to do Ansible ping to show successfull configurations
+<img width="712" height="493" alt="Screenshot 2025-02-19 114440" src="https://github.com/user-attachments/assets/bb9a8e81-ad34-4c90-8c76-297eafe591fa" />
+i ping both of my server nodes names Tomcat_server, and maven_server
