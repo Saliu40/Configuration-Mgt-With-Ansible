@@ -58,8 +58,33 @@ And many other operational defaults
 <img width="780" height="186" alt="Screenshot 2025-02-19 120543" src="https://github.com/user-attachments/assets/9b8838c5-734a-499b-a64e-39b2b477fff3" />
 
 <img width="701" height="371" alt="Screenshot 2025-02-19 120531" src="https://github.com/user-attachments/assets/ba758a0c-00ad-4ea1-b803-0c11e434aa27" />
+
 touch a file (vi or nano ansible.cfg), define or paste the above codes and save it
 after saving the file, run the below commands to enable ansible recorgnises it as the default .cfg file
  A screenshot of a computer
  <img width="791" height="343" alt="Screenshot 2025-02-19 120749" src="https://github.com/user-attachments/assets/94d9c5b1-15d7-459f-8732-cbdf79e8d1b1" />
 
+Stage6 Defining Ansible playbook
+An Ansible Playbook is a file where we define tasks that Ansible should perform on our woker/slave nodes using Yml language— such as installing software, configuring services, deploying applications, or managing system settings.
+It is the heart of Ansible automation.
+
+<img width="405" height="941" alt="Screenshot 2025-02-19 225413" src="https://github.com/user-attachments/assets/518cb66a-c16a-4c4f-b401-f7e5ea11fc7b" />
+the above playbook name is Tomcat.yml
+we define the playbook on the master node, instructing ansible to install tomcat on the Tomcat_server node.(thats one of our 2slave node)
+
+<img width="367" height="974" alt="Screenshot 2025-02-20 114249" src="https://github.com/user-attachments/assets/67bf0810-a9ee-4b82-ac20-2ecae0de4f75" />
+Tomcat was successfully installed on the tomcat worker/slave node automatedly.
+<img width="347" height="564" alt="Screenshot 2025-02-19 224833" src="https://github.com/user-attachments/assets/be5e4d3c-a611-4dca-a0e7-bcfc61c224bf" />
+to confirm, we ssh into the tomcat worker node to chack.
+
+we define another playbook to Install Maven on our other worker/slave node
+<img width="405" height="941" alt="Screenshot 2025-02-19 225413" src="https://github.com/user-attachments/assets/4d56b16a-1a5a-4fe8-9732-40528ee8b4a9" />
+name of the playbook is Maven.yml 
+define on the  Master Vm for Ansible to installed Maven on the server node2, the Maven server
+<img width="367" height="974" alt="Screenshot 2025-02-20 114249" src="https://github.com/user-attachments/assets/47799264-fa46-48c3-82f1-86d19d7233c9" />
+the playbook report shows it run successfully.
+
+<img width="363" height="296" alt="Screenshot 2025-02-20 114256" src="https://github.com/user-attachments/assets/68b30a7b-ef88-4621-971b-0d88b877b487" />
+
+we ssh into worker node2 the Maven_server, and there it is.
+with this Ansible Configuration, throught the master VM, we can controll all the worker/slave nodes to which ever direction we want. all it takes is just to get the right modules.
